@@ -1,1 +1,264 @@
-ExampleContent
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>etnl.xyz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #bb86fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .E1 {
+            background: rgba(55, 55, 55, 0.33);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0px rgba(0, 0, 0, 0);
+            width: 900px;
+            min-height: 250px;
+            height: auto;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            margin: auto;
+            transition: transform 0.3s ease;
+        }
+        .E1:hover {
+            transform: translateY(-7.5px);
+            animation: orbit 5s linear infinite;
+        }
+        .E1:hover h1 {
+            color: #bb86fc;
+            text-shadow: 0 10px 75px rgba(187, 134, 252, 1);
+            animation: title-float 2s ease-in-out infinite;
+        }
+        h1 {
+            color: rgba(187, 134, 252, 0.5);
+            margin-bottom: 40px;
+            font-size: 5.5em;
+            text-shadow: 0 0px 30px rgba(187, 134, 252, 0.5);
+            transition: color 0.3s ease, text-shadow 0.1s ease;
+        }
+        @keyframes E3 {
+            0%, 100% {
+                transform: translateY(0);
+                text-shadow: 0 0 20px #bb86fc;
+            }
+            50% {
+                transform: translateY(-5px);
+                text-shadow: 0 15px 30px #bb86fc;
+            }
+        }
+        @keyframes title-float {
+            0%, 100% { transform: translateY(0); text-shadow: 0 0 10px #bb86fc; }
+            50% { transform: translateY(-5px); text-shadow: 0 15px 20px #bb86fc; }
+        }
+        @keyframes orbit {
+          0%, 100% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.5),
+              15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px 15px 30px rgba(187, 134, 252, 0.1),
+              -15px 15px 30px rgba(187, 134, 252, 0.1),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          12.5% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.2),
+              15px -15px 30px rgba(187, 134, 252, 0.4),
+              15px 15px 30px rgba(187, 134, 252, 0.1),
+              -15px 15px 30px rgba(187, 134, 252, 0.1),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          25% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px -15px 30px rgba(187, 134, 252, 0.5),
+              15px 15px 30px rgba(187, 134, 252, 0.1),
+              -15px 15px 30px rgba(187, 134, 252, 0.1),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          37.5% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px -15px 30px rgba(187, 134, 252, 0.2),
+              15px 15px 30px rgba(187, 134, 252, 0.4),
+              -15px 15px 30px rgba(187, 134, 252, 0.1),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          50% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px 15px 30px rgba(187, 134, 252, 0.5),
+              -15px 15px 30px rgba(187, 134, 252, 0.1),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          62.5% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px 15px 30px rgba(187, 134, 252, 0.2),
+              -15px 15px 30px rgba(187, 134, 252, 0.4),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          75% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px 15px 30px rgba(187, 134, 252, 0.1),
+              -15px 15px 30px rgba(187, 134, 252, 0.5),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+          87.5% {
+            box-shadow: 
+              -15px -15px 30px rgba(187, 134, 252, 0.4),
+              15px -15px 30px rgba(187, 134, 252, 0.1),
+              15px 15px 30px rgba(187, 134, 252, 0.1),
+              -15px 15px 30px rgba(187, 134, 252, 0.2),
+              0 0 0 3px rgba(187, 134, 252, 0.1) inset,
+              0 0 40px rgba(187, 134, 252, 0.1);
+          }
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="E4"></canvas>
+    <div class="E1" id="E5">
+        <h1>etnl.xyz</h1>
+    </div>
+    <script>
+        const E6 = document.getElementById('E4'),
+              E7 = E6.getContext('2d');
+        E6.width = window.innerWidth;
+        E6.height = window.innerHeight;
+        let E8 = [];
+
+        class E9 {
+            constructor(E10, E11, E12, E13, E14, E15) {
+                this.x = E10;
+                this.y = E11;
+                this.E12 = E12;
+                this.E13 = E13;
+                this.E14 = E14;
+                this.E15 = E15;
+            }
+            E16() {
+                E7.beginPath();
+                E7.arc(this.x, this.y, this.E14, 0, 2 * Math.PI);
+                E7.fillStyle = this.E15;
+                E7.fill();
+            }
+            E17() {
+                this.x + this.E12;
+                this.y + this.E13;
+                if (this.x + this.E14 > E6.width || this.x - this.E14 < 0) {
+                    this.E12 = -this.E12;
+                }
+                if (this.y + this.E14 > E6.height || this.y - this.E14 < 0) {
+                    this.E13 = -this.E13;
+                }
+                this.x += this.E12;
+                this.y += this.E13;
+                this.E16();
+            }
+        }
+
+        function E18() {
+            E8 = [];
+            for (let E19 = 0; E19 < 150; E19++) {
+                let E14 = Math.random() * 5 + 1,
+                    E10 = Math.random() * (E6.width - 2 * E14) + E14,
+                    E11 = Math.random() * (E6.height - 2 * E14) + E14,
+                    E12 = (Math.random() * 0.4) - 0.2,
+                    E13 = (Math.random() * 0.4) - 0.2,
+                    E15 = '#bb86fc';
+                E8.push(new E9(E10, E11, E12, E13, E14, E15));
+            }
+        }
+
+        function E20() {
+            requestAnimationFrame(E20);
+            E7.clearRect(0, 0, E6.width, E6.height);
+            for (let E19 = 0; E19 < E8.length; E19++) {
+                E8[E19].E17();
+            }
+        }
+
+        E18();
+        E20();
+        window.addEventListener('resize', () => {
+            E6.width = window.innerWidth;
+            E6.height = window.innerHeight;
+            E18();
+        });
+
+        const E21 = document.getElementById('E5');
+        let E22 = 0,
+            E23 = 0,
+            E24 = 0,
+            E25 = 0;
+        const E26 = 0.1;
+
+        function E27(E28, E29, E30) {
+            return E28 * (1 - E30) + E29 * E30;
+        }
+
+        E21.addEventListener('mousemove', (E31) => {
+            const E32 = E21.getBoundingClientRect(),
+                  E33 = E32.width / 2,
+                  E34 = E32.height / 2,
+                  E35 = E31.clientX - E32.left - E33,
+                  E36 = E31.clientY - E32.top - E34,
+                  E37 = 10;
+            E22 = (E36 / E34) * E37;
+            E23 = -(E35 / E33) * E37;
+        });
+
+        E21.addEventListener('mouseleave', () => {
+            E22 = 0;
+            E23 = 0;
+        });
+
+        function E38() {
+            E24 = E27(E24, E22, E26);
+            E25 = E27(E25, E23, E26);
+            E21.style.transform = `perspective(1000px) rotateX(${E24}deg) rotateY(${E25}deg)`;
+            requestAnimationFrame(E38);
+        }
+
+        E38();
+    </script>
+</body>
+</html>
