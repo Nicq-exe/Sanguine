@@ -1,10 +1,10 @@
 {
   "entries": {
     "1": {
-      "entry_name": "Changed Example",
+      "entry_name": "Version 0.0.1",
       "entry_date": "8/26/25 9:20pm",
-      "entry_version_change": "None",
-      "entry_content": "Example change details here."
+      "entry_version_change": "0.0.1",
+      "entry_content": "Added base logic."
     }
   }
 }
