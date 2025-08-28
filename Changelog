@@ -5,6 +5,12 @@
       "entry_date": "8/26/25 9:20pm",
       "entry_version_change": "0.0.1",
       "entry_content": "Created Dashboard and Builder tab and logic."
+    },
+    "2": {
+      "entry_name": "Inital Recode and Refactor",
+      "entry_date": "8/28/25 3:06am",
+      "entry_version_change": "0.0.2",
+      "entry_content": "Rewrote Dashboard and Builder tab."
     }
   }
 }
