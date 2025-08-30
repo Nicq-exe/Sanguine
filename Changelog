@@ -11,6 +11,12 @@
       "entry_date": "8/28/25 3:06am",
       "entry_version_change": "0.0.2",
       "entry_content": "Rewrote Dashboard and Builder tab."
+    },
+    "3": {
+      "entry_name": "Added Development/Production hotswap support",
+      "entry_date": "8/30/25 5:54am",
+      "entry_version_change": "0.0.3",
+      "entry_content": "Added Development vs Production mode identifiers to fix path errors."
     }
   }
 }
